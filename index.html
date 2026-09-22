@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENDISCAR | Central de Distribución de Carnes en Canal</title>
+    
+    <!-- Meta Tags Open Graph para WhatsApp y Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CENDISCAR | Central de Distribución de Carnes">
+    <meta property="og:description" content="Distribución mayorista de carne en canal de alta calidad: Novillo, Búfalo, Toro y Vaca Seleccionada para supermercados, carnicerías e industria gastronómica.">
+    <meta property="og:image" content="bannercendiscar.jpeg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#8B261D',     // Marrón Borgoña Cendiscar
+                            redDark: '#661912',
+                            redLight: '#A83228',
+                            bg: '#FAFAFA',      // Fondo claro principal
+                            card: '#FFFFFF',    // Tarjetas en blanco puro
+                            surface: '#F4EFEA', // Tono crema/marfil suave
+                            border: '#E5E0D8',  // Bordes sutiles
+                            text: '#1F1F24',    // Texto oscuro suave
+                            muted: '#6B6A72'   // Texto secundario
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #1F1F24;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .bg-pattern-light {
+            background-color: #FAFAFA;
+            background-image: radial-gradient(rgba(139, 38, 29, 0.06) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        .glass-header-light {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(139, 38, 29, 0.12);
+        }
+
+        .card-light {
+            background: #FFFFFF;
+            border: 1px solid #E5E0D8;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .card-light:hover {
+            border-color: rgba(139, 38, 29, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px -8px rgba(139, 38, 29, 0.12);
+        }
+
+        .btn-brand {
+            background: linear-gradient(135deg, #8B261D 0%, #661912 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 16px rgba(139, 38, 29, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-brand:hover {
+            background: linear-gradient(135deg, #A83228 0%, #8B261D 100%);
+            box-shadow: 0 6px 22px rgba(139, 38, 29, 0.38);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-brand {
+            border: 1.5px solid #8B261D;
+            color: #8B261D;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-brand:hover {
+            background-color: #8B261D;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="bg-pattern-light min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- BARRA SUPERIOR / NAVEGACIÓN -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-header-light shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- LOGOTIPO CENDISCAR -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="bg-white px-2 py-1 rounded border border-gray-200 flex items-center shadow-xs">
+                    <img src="bannercendiscar.jpeg" alt="CENDISCAR - Central de Distribución de Carnes" class="h-9 sm:h-11 object-contain">
+                </div>
+            </a>
+
+            <!-- NAVEGACIÓN ESCRITORIO -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-bold text-gray-700">
+                <a href="#nosotros" class="hover:text-brand-red transition">Nosotros</a>
+                <a href="#canal" class="hover:text-brand-red transition">Carne en Canal</a>
+                <a href="#ganado" class="hover:text-brand-red transition">Tipos de Reses</a>
+                <a href="#ventajas" class="hover:text-brand-red transition">Cadena de Frío</a>
+                <a href="#cotizacion" class="hover:text-brand-red transition">Contacto B2B</a>
+            </nav>
+
+            <!-- BOTÓN DIRECTO WHATSAPP -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/584140000000?text=Hola%20CENDISCAR,%20deseo%20información%20sobre%20pedidos%20de%20carne%20en%20canal" target="_blank" class="btn-brand px-5 py-2.5 rounded text-xs uppercase tracking-wider font-bold flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-base"></i>
+                    <span class="hidden sm:inline">Atención Directa</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION EN TONOS CLAROS -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden border-b border-brand-border bg-gradient-to-b from-brand-surface/60 to-brand-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs uppercase tracking-widest font-bold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+                        Distribución Mayorista B2B
+                    </div>
+                    <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-brand-text leading-tight mb-6">
+                        Líderes en <span class="text-brand-red">Carne en Canal</span> de Alta Calidad
+                    </h1>
+                    <p class="text-base sm:text-lg text-brand-muted mb-8 font-normal leading-relaxed">
+                        Suministro continuo y estandarizado para supermercados, carnicerías, frigoríficos e industria gastronómica. Selección rigurosa de ganado, óptimo rendimiento y estricta cadena de frío.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#cotizacion" class="btn-brand px-7 py-4 rounded font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-3">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            Solicitar Cotización por Volumen
+                        </a>
+                        <a href="#ganado" class="btn-outline-brand px-7 py-4 rounded font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2">
+                            Ver Tipos de Reses
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-2xl overflow-hidden border-4 border-white shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" alt="Carne en Canal Cendiscar" class="w-full h-[420px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4 p-4 bg-white/95 backdrop-blur-md rounded border border-gray-100 shadow-md">
+                            <p class="text-xs uppercase tracking-wider text-brand-red font-bold mb-0.5">Calidad Garantizada</p>
+                            <p class="text-xs text-gray-700">Canales clasificadas bajo estándares estrictos de peso y cobertura de grasa.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICAS EN TARJETAS BLANCAS -->
+    <section class="py-10 bg-white border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-lg bg-brand-surface/40 border border-brand-border/60">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-brand-red mb-1">100%</div>
+                    <div class="text-[11px] uppercase tracking-wider text-brand-muted font-bold">Garantía Sanitaria</div>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-surface/40 border border-brand-border/60">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-brand-red mb-1">Cero</div>
+                    <div class="text-[11px] uppercase tracking-wider text-brand-muted font-bold">Ruptura de Cadena de Frío</div>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-surface/40 border border-brand-border/60">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-brand-red mb-1">B2B</div>
+                    <div class="text-[11px] uppercase tracking-wider text-brand-muted font-bold">Atención Especializada</div>
+                </div>
+                <div class="p-4 rounded-lg bg-brand-surface/40 border border-brand-border/60">
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-brand-red mb-1">Alta</div>
+                    <div class="text-[11px] uppercase tracking-wider text-brand-muted font-bold">Rendimiento en Canal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: NUESTRO COMPROMISO CON LA CARNE EN CANAL -->
+    <section id="canal" class="py-20 border-b border-brand-border bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-brand-border shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=1200&q=80" alt="Canal de Res Cendiscar" class="w-full h-[480px] object-cover">
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Estándar de Excelencia</h2>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-brand-text mb-6">Carne en Canal Seleccionada para Alto Rendimiento</h3>
+                    <p class="text-brand-muted mb-6 leading-relaxed text-sm sm:text-base">
+                        En <strong class="text-brand-text">CENDISCAR</strong> entendemos que el éxito comercial de su negocio depende del rendimiento real de la res en canal. Trabajamos con ganado criado bajo estrictos parámetros nutricionales, garantizando canales con cobertura de grasa óptima, excelente conformación muscular y frescura inigualable.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4 p-3 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+                            <div class="w-9 h-9 rounded bg-brand-red text-white flex items-center justify-center shrink-0 font-bold text-sm">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-text text-sm">Inspección Sanitaria Rigurosa</h4>
+                                <p class="text-xs text-brand-muted">Canales inspeccionadas y certificadas bajo control veterinario en planta de beneficio.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+                            <div class="w-9 h-9 rounded bg-brand-red text-white flex items-center justify-center shrink-0 font-bold text-sm">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-text text-sm">Pesaje Tipificado y Transparente</h4>
+                                <p class="text-xs text-brand-muted">Garantía exacta de kilogramos entregados con comprobantes de pesaje oficiales.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-lg bg-brand-surface/50 border border-brand-border/60">
+                            <div class="w-9 h-9 rounded bg-brand-red text-white flex items-center justify-center shrink-0 font-bold text-sm">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-text text-sm">Oreo y Maduración Controlada</h4>
+                                <p class="text-xs text-brand-muted">Cámaras frigoríficas avanzadas para preservar color, firmeza y jugosidad natural.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TIPOS DE RESES EN CANAL -->
+    <section id="ganado" class="py-20 bg-brand-surface/30 border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Nuestra Oferta en Canal</h2>
+                <h3 class="font-display text-3xl sm:text-4xl font-bold text-brand-text mb-4">Tipos de Reses y Ganado Especializado</h3>
+                <p class="text-brand-muted text-sm leading-relaxed">Ofrecemos clasificación bovina diversificada para adaptarnos a las requerimientos de rendimiento, marmoleo y perfil comercial de su establecimiento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- TARJETA 1: NOVILLO PREMIUM -->
+                <div class="card-light rounded-xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" alt="Novillo Premium Cendiscar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-brand-red text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded shadow-sm tracking-wider">
+                                Alta Terneza
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-display text-xl font-bold text-brand-text mb-1">Novillo Premium</h4>
+                            <p class="text-[11px] uppercase tracking-wider text-brand-red mb-3 font-bold">Grasa Cobertura Grado 2-3</p>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Animales jóvenes de óptimo engorde. Destaca por su marmoleo uniforme, carne suave, jugosa y de color rojo brillante.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t border-gray-100 pt-3 font-medium">
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Para: Restaurantes y Cortes Finos</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Alto rendimiento de lomo y pulpas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="solicitarInformacion('Novillo Premium')" class="w-full py-2.5 rounded btn-outline-brand text-xs uppercase font-bold tracking-wider">
+                            Consultar Disponibilidad
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TARJETA 2: BÚFALO -->
+                <div class="card-light rounded-xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80" alt="Búfalo Cendiscar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-emerald-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded shadow-sm tracking-wider">
+                                Magro y Saludable
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-display text-xl font-bold text-brand-text mb-1">Búfalo de Agua</h4>
+                            <p class="text-[11px] uppercase tracking-wider text-emerald-800 mb-3 font-bold">Alto Valor Proteico</p>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Canal de carne magra de intenso sabor y altísima digestibilidad. Opción de gran aceptación en el mercado moderno.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t border-gray-100 pt-3 font-medium">
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Bajo contenido de grasa intramuscular</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Excelente retención de jugos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="solicitarInformacion('Carne de Búfalo')" class="w-full py-2.5 rounded btn-outline-brand text-xs uppercase font-bold tracking-wider">
+                            Consultar Disponibilidad
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3: TORO / VACUNO INDUSTRIAL -->
+                <div class="card-light rounded-xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1570042707208-14829890701b?auto=format&fit=crop&w=800&q=80" alt="Toro Cendiscar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-amber-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded shadow-sm tracking-wider">
+                                Alto Volumen
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-display text-xl font-bold text-brand-text mb-1">Toro / Industrial</h4>
+                            <p class="text-[11px] uppercase tracking-wider text-amber-800 mb-3 font-bold">Máximo Rendimiento Magro</p>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Canales de gran tonelaje y volumen muscular. Excelente firmeza para procesos industriales, molienda y elaboración.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t border-gray-100 pt-3 font-medium">
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Para: Procesadores e Industria</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Gran firmeza y densidad cárnica</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="solicitarInformacion('Toro / Industrial')" class="w-full py-2.5 rounded btn-outline-brand text-xs uppercase font-bold tracking-wider">
+                            Consultar Disponibilidad
+                        </button>
+                    </div>
+                </div>
+
+                <!-- TARJETA 4: VACA SELECCIONADA -->
+                <div class="card-light rounded-xl overflow-hidden flex flex-col justify-between group">
+                    <div>
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?auto=format&fit=crop&w=800&q=80" alt="Vaca Seleccionada Cendiscar" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 bg-gray-700 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded shadow-sm tracking-wider">
+                                Sabor Intenso
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h4 class="font-display text-xl font-bold text-brand-text mb-1">Vaca Seleccionada</h4>
+                            <p class="text-[11px] uppercase tracking-wider text-gray-700 mb-3 font-bold">Equilibrio Comercial</p>
+                            <p class="text-xs text-brand-muted leading-relaxed mb-4">
+                                Canales de hembras adultas bien terminadas. Brindan un perfil de sabor pronunciado y gran versatilidad de cortes.
+                            </p>
+                            <ul class="text-xs text-gray-600 space-y-2 border-t border-gray-100 pt-3 font-medium">
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Gran demanda en carnicerías</li>
+                                <li class="flex items-center gap-2"><i class="fas fa-chevron-right text-brand-red text-[10px]"></i> Excelente relación costo/rendimiento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        <button onclick="solicitarInformacion('Vaca Seleccionada')" class="w-full py-2.5 rounded btn-outline-brand text-xs uppercase font-bold tracking-wider">
+                            Consultar Disponibilidad
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGÍSTICA Y TRANSPORTE REFRIGERADO -->
+    <section id="ventajas" class="py-20 border-b border-brand-border bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Flota Refrigerada Cendiscar" class="rounded-xl shadow-lg border border-brand-border object-cover w-full h-[420px]">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Flota y Distribución</h2>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-brand-text mb-6">Cadena de Frío e Higiene de Nivel Superior</h3>
+                    <p class="text-brand-muted mb-6 leading-relaxed text-sm sm:text-base">
+                        Contamos con unidades de transporte thermoking adaptadas con gancheras para el despacho vertical de canal, previniendo el aplastamiento de tejidos y garantizando la temperatura de refrigeración idónea desde nuestra planta hasta su establecimiento.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-brand-surface/60 rounded-lg border border-brand-border">
+                            <i class="fas fa-temperature-low text-brand-red text-2xl mb-2"></i>
+                            <h5 class="font-bold text-brand-text text-sm">0°C a 4°C</h5>
+                            <p class="text-xs text-brand-muted">Monitoreo térmico continuo durante todo el trayecto.</p>
+                        </div>
+                        <div class="p-4 bg-brand-surface/60 rounded-lg border border-brand-border">
+                            <i class="fas fa-truck-loading text-brand-red text-2xl mb-2"></i>
+                            <h5 class="font-bold text-brand-text text-sm">Carga Protegida</h5>
+                            <p class="text-xs text-brand-muted">Despachos programados que preservan la inocuidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE COTIZACIÓN B2B -->
+    <section id="cotizacion" class="py-20 bg-brand-surface/50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 sm:p-12 rounded-2xl border border-brand-border shadow-xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-xs uppercase tracking-widest text-brand-red font-bold mb-2">Atención Comercial B2B</h2>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-brand-text mb-3">Solicitud de Cotización en Canal</h3>
+                    <p class="text-brand-muted text-xs sm:text-sm">Complete el formulario y nuestro departamento de ventas corporativas le enviará un presupuesto personalizado según el volumen solicitado.</p>
+                </div>
+
+                <form id="formCotizacion" onsubmit="enviarCotizacionWhatsApp(event)" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Empresa / Establecimiento *</label>
+                            <input type="text" id="empresa" required placeholder="Ej. Frigorífico El Triunfo" class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Nombre del Contacto *</label>
+                            <input type="text" id="contacto" required placeholder="Ej. Carlos Mendoza" class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Tipo de Comercio *</label>
+                            <select id="tipoComercio" class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm font-medium">
+                                <option value="Supermercado / Cadena">Supermercado / Cadena</option>
+                                <option value="Carnicería / Frigorífico">Carnicería / Frigorífico</option>
+                                <option value="Restaurante / Hotel">Restaurante / Hotel</option>
+                                <option value="Industria / Embutidos">Industria / Embutidos</option>
+                                <option value="Distribuidor Mayorista">Distribuidor Mayorista</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Tipo de Res Requerida *</label>
+                            <select id="tipoRes" class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm font-medium">
+                                <option value="Novillo Premium">Novillo Premium</option>
+                                <option value="Carne de Búfalo">Carne de Búfalo</option>
+                                <option value="Toro / Industrial">Toro / Industrial</option>
+                                <option value="Vaca Seleccionada">Vaca Seleccionada</option>
+                                <option value="Variado / Mixto">Variado / Mixto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Volumen Estimado (Canales / Ton) *</label>
+                            <input type="text" id="volumen" required placeholder="Ej. 10 Canales semanales / 2 Toneladas" class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Ubicación de Despacho *</label>
+                            <input type="text" id="ubicacion" required placeholder="Ej. Maracaibo, Zulia" class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-brand-text font-bold mb-2">Observaciones Adicionales</label>
+                        <textarea id="observaciones" rows="3" placeholder="Detalles de requerimientos de peso por canal, frecuencia de entrega, etc." class="w-full bg-brand-bg border border-brand-border rounded px-4 py-3 text-brand-text focus:outline-none focus:border-brand-red text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full btn-brand py-4 rounded font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 mt-4">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        Enviar Solicitud a Ventas WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CLARO -->
+    <footer class="bg-white py-10 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <div class="bg-white px-2 py-1 rounded border border-gray-200 inline-block mb-2 shadow-xs">
+                        <img src="bannercendiscar.jpeg" alt="CENDISCAR" class="h-8 object-contain">
+                    </div>
+                    <p class="text-xs text-brand-muted">Central de Distribución de Carnes en Canal. Todos los derechos reservados.</p>
+                </div>
+
+                <div class="flex items-center gap-6 text-brand-text font-semibold text-xs uppercase tracking-wider">
+                    <a href="#nosotros" class="hover:text-brand-red transition">Nosotros</a>
+                    <a href="#canal" class="hover:text-brand-red transition">Canal</a>
+                    <a href="#ganado" class="hover:text-brand-red transition">Reses</a>
+                    <a href="#cotizacion" class="hover:text-brand-red transition">Cotizar</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LÓGICA DE INTERACCIÓN -->
+    <script>
+        function solicitarInformacion(tipoGanado) {
+            const selectRes = document.getElementById('tipoRes');
+            if(selectRes) {
+                selectRes.value = tipoGanado;
+            }
+            document.getElementById('cotizacion').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function enviarCotizacionWhatsApp(event) {
+            event.preventDefault();
+
+            const empresa = document.getElementById('empresa').value;
+            const contacto = document.getElementById('contacto').value;
+            const tipoComercio = document.getElementById('tipoComercio').value;
+            const tipoRes = document.getElementById('tipoRes').value;
+            const volumen = document.getElementById('volumen').value;
+            const ubicacion = document.getElementById('ubicacion').value;
+            const observaciones = document.getElementById('observaciones').value;
+
+            // Reemplazar con el número telefónico oficial de CENDISCAR
+            const numeroWhatsApp = "584140000000"; 
+
+            const mensaje = `*SOLICITUD DE COTIZACIÓN B2B - CENDISCAR*%0A%0A` +
+                `*Empresa:* ${empresa}%0A` +
+                `*Contacto:* ${contacto}%0A` +
+                `*Tipo de Comercio:* ${tipoComercio}%0A` +
+                `*Tipo de Res:* ${tipoRes}%0A` +
+                `*Volumen Requerido:* ${volumen}%0A` +
+                `*Ubicación de Entrega:* ${ubicacion}%0A` +
+                `*Observaciones:* ${observaciones || 'Sin observaciones'}`;
+
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+        }
+    </script>
+</body>
+</html>
